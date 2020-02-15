@@ -7,7 +7,7 @@ public class NavScript : MonoBehaviour
     private Rigidbody2D rb;
     private Collision col;
     Vector3 moveV=new Vector3(0,0,0);
-    private bool canJump=false;
+    private bool dcol=false;
     
     float xv=0;
     float yv=0;
@@ -21,6 +21,9 @@ public class NavScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     { 
+        if(!dcol){
+            yv=(float)(yv*0.90);
+        }
         if(Input.GetKey(KeyCode.A)&&!Input.GetKey(KeyCode.D))
         {
             xv=-(float)0.1;
@@ -37,30 +40,21 @@ public class NavScript : MonoBehaviour
                 xv+=-xv;
             }
         }
-        if(canJump){
-            if(Input.GetKey(KeyCode.W)){
-                yv=5;
-                canJump=false;
-            }
+        if(dcol&&Input.GetKey(KeyCode.W))
+        {
+            dcol=false;
+            yv=(float)0.25;
         }
-        moveV=new Vector3(xv,yv,0);
+        moveV=new Vector3(xv,yv,0);        
         transform.position+=moveV;
 
     }
 
-    void OnCollisionEnter(Collision col)
+    void OnCollisionEnter2D(Collision2D col)
     {
-        this.col=col;
-        if(col.gameObject.name=="floor")
+        if(col.gameObject.name=="Floor")
         {   
-           if(!canJump)
-           {
-               yv=0;
-               canJump=true;
-           }
-        }
-        else{
-            yv--;
+            dcol=true;
         }
     }
 
