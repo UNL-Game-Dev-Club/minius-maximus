@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4200310553964068369}
   - component: {fileID: 4200310553964068374}
-  - component: {fileID: 7763190910456371290}
+  - component: {fileID: -7492480896746826962}
   m_Layer: 0
   m_Name: PlayerSprite
   m_TagString: Untagged
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7763190910456371290
+--- !u!114 &-7492480896746826962
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,7 +94,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bc26a4b1f9824808a36550abe2bfc4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
-  strength: 3
-  defense: 3
-  currentHealth: 3
