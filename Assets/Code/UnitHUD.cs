@@ -13,5 +13,10 @@ public class UnitHUD : MonoBehaviour
         hpSlider.value = unit.currentHealth;
     }
 
+    public void SetHp(int hp)
+    {
+        hpSlider.value = hp;
+    }
+
     
 }
