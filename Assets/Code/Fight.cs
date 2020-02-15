@@ -8,6 +8,7 @@ public class Fight : MonoBehaviour
     public int health;
     public int strength;
     public int defense;
+    public int enemyNumber;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -15,9 +16,11 @@ public class Fight : MonoBehaviour
         EnemyUnit.maxHealth = health;
         EnemyUnit.strength = strength;
         EnemyUnit.defense = defense;
+        EnemyUnit.enemyNumber = enemyNumber;
 
         PlayerUnit.currentHealth = PlayerUnit.maxHealth;
 
         SceneManager.LoadScene("Combat");
     }
+
 }
