@@ -3,13 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerUnit : MonoBehaviour
+public class EnemyUnit : MonoBehaviour
 {
-    public static int maxHealth = 6;
+    public static int maxHealth;
     public static int strength = 3;
     public static int defense = 3;
-    public static int currentHealth = 6;
+    public static int currentHealth = 20;
 
+    private void Awake()
+    {
+        maxHealth = 20;
+    }
 
     public bool TakeDamage(int strength, int defense)
     {
@@ -24,5 +28,4 @@ public class PlayerUnit : MonoBehaviour
             return false;
         }
     }
-  
 }

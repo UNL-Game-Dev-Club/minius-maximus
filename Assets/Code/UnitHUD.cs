@@ -8,10 +8,16 @@ public class UnitHUD : MonoBehaviour
 {
     public Slider hpSlider;
 
-    public void SetHUD(PlayerUnit unit)
+    public void SetHUD(PlayerUnit playerUnit)
     {
         hpSlider.maxValue = PlayerUnit.maxHealth;
         hpSlider.value = PlayerUnit.currentHealth;
+    }
+
+    public void SetHUD(EnemyUnit enemyUnit)
+    {
+        hpSlider.maxValue = EnemyUnit.maxHealth;
+        hpSlider.value = EnemyUnit.currentHealth;
     }
 
     public void SetHp(int hp)
