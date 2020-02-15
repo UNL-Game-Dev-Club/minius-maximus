@@ -15,7 +15,7 @@ public class DialogueManager : MonoBehaviour
     {
         Debug.Log("Starting conversation with "+dialouge.name);
         sentences.Clear();
-        foreach(string sentence in Dialogue.sentences){
+        foreach(string sentence in sentences){
             sentences.Enqueue(sentence);
         }
         DisplayNextSentence();
