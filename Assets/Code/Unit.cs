@@ -9,5 +9,18 @@ public class Unit : MonoBehaviour
     public int defense;
     public int currentHealth;
 
+    public bool TakeDamage(int strength, int defense)
+    {
+        currentHealth -= strength - defense / 2;
+
+        if (currentHealth <= 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
   
 }
