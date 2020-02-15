@@ -16,6 +16,8 @@ public class Fight : MonoBehaviour
         EnemyUnit.strength = strength;
         EnemyUnit.defense = defense;
 
+        PlayerUnit.currentHealth = PlayerUnit.maxHealth;
+
         SceneManager.LoadScene("Combat");
     }
 }

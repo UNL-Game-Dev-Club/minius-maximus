@@ -383,8 +383,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
-  strength: 5
-  defense: 3
+  strength: 3
+  defense: 1
 --- !u!61 &929205592
 BoxCollider2D:
   m_ObjectHideFlags: 0

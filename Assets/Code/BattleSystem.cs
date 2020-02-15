@@ -59,6 +59,13 @@ public class BattleSystem : MonoBehaviour
     {
         attackButton.SetActive(true);
         statsButton.SetActive(true);
+        if(StatsSystem.counter > 0)
+        {
+            DisableButton();
+            StatsSystem.counter = 0;
+            state = BattleState.ENEMYTURN;
+            StartCoroutine(EnemyTurn());
+        }
     }
 
     //function that runs on attack button press
@@ -128,11 +135,11 @@ public class BattleSystem : MonoBehaviour
     {
         if (state == BattleState.WON)
         {
-            displayText.text = "You Win!";
+            SceneManager.LoadScene("Victory");
         }
         else if (state == BattleState.LOST)
         {
-            displayText.text = "Pathetic. Try again.";
+            SceneManager.LoadScene("GameOver");
         }
     }
 

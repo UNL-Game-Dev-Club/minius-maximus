@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class StatsSystem : MonoBehaviour
 {
+    public static int counter = 0;
+
     public Text healthStatsText;
     public Text strengthStatsText;
     public Text defenseStatsText;
@@ -17,8 +19,6 @@ public class StatsSystem : MonoBehaviour
     public int defenseStat;
 
     public GameObject playerPrefab;
-
-    BattleSystem battleSystem;
 
 
 
@@ -52,6 +52,13 @@ public class StatsSystem : MonoBehaviour
             PlayerUnit.currentHealth = healthStat;
             PlayerUnit.strength = strengthStat;
             PlayerUnit.defense = defenseStat;
+
+            if (PlayerUnit.currentHealth > PlayerUnit.maxHealth)
+            {
+                PlayerUnit.maxHealth = PlayerUnit.currentHealth;
+            }
+
+            counter++;
 
             SceneManager.LoadScene("Combat");
         }
