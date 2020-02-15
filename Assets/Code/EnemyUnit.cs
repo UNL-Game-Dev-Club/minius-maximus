@@ -5,15 +5,11 @@ using UnityEngine;
 
 public class EnemyUnit : MonoBehaviour
 {
-    public static int maxHealth;
+    public static int maxHealth = 6;
     public static int strength = 3;
     public static int defense = 3;
-    public static int currentHealth = 20;
+    public static int currentHealth = 6;
 
-    private void Awake()
-    {
-        maxHealth = 20;
-    }
 
     public bool TakeDamage(int strength, int defense)
     {

@@ -13,7 +13,16 @@ public class PlayerUnit : MonoBehaviour
 
     public bool TakeDamage(int strength, int defense)
     {
-        currentHealth -= strength - defense / 2;
+        //Prevents Damage Going Negative
+        if (defense / 2 >= strength)
+        {
+            currentHealth -= 0;
+        }
+        else
+        {
+            currentHealth -= strength - defense / 2;
+        }
+
 
         if (currentHealth <= 0)
         {
@@ -23,6 +32,8 @@ public class PlayerUnit : MonoBehaviour
         {
             return false;
         }
+
+        
     }
   
 }

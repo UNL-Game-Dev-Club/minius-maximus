@@ -11,27 +11,33 @@ public class StatsSystem : MonoBehaviour
     public Text defenseStatsText;
     public Text statPointsText;
 
+    public int statPoints = 0;
+    public int healthStat;
+    public int strengthStat;
+    public int defenseStat;
+
     public GameObject playerPrefab;
 
-    PlayerUnit player;
+    BattleSystem battleSystem;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-        player = playerPrefab.GetComponent<PlayerUnit>();
         SetStats();
     }
 
     public void SetStats()
     {
-        int healthStat = PlayerUnit.currentHealth;
-        int strengthStat = PlayerUnit.strength;
-        int defenseStat = PlayerUnit.defense;
+        healthStat = PlayerUnit.currentHealth;
+        strengthStat = PlayerUnit.strength;
+        defenseStat = PlayerUnit.defense;
 
         healthStatsText.text = healthStat.ToString();
         strengthStatsText.text = strengthStat.ToString();
         defenseStatsText.text = defenseStat.ToString();
+        statPointsText.text = statPoints.ToString();
     }
 
     public void OnBackButton()
@@ -39,10 +45,90 @@ public class StatsSystem : MonoBehaviour
         SceneManager.LoadScene("Combat");
     }
 
-
-    // Update is called once per frame
-    void Update()
+    public void OnApplyButton()
     {
-        
+        if (statPoints == 0)
+        {
+            PlayerUnit.currentHealth = healthStat;
+            PlayerUnit.strength = strengthStat;
+            PlayerUnit.defense = defenseStat;
+
+            SceneManager.LoadScene("Combat");
+        }
     }
+
+
+    public void AddHealth()
+    {
+        if(statPoints > 0)
+        {
+            statPoints--;
+            healthStat++;
+
+            healthStatsText.text = healthStat.ToString();
+            statPointsText.text = statPoints.ToString();
+        }
+
+    }
+
+    public void SubtractHealth()
+    {
+        if (healthStat - 1 > 0)
+        {
+            healthStat--;
+            statPoints++;
+
+            healthStatsText.text = healthStat.ToString();
+            statPointsText.text = statPoints.ToString();
+        }
+    }
+
+    public void AddStrength()
+    {
+        if (statPoints > 0)
+        {
+            statPoints--;
+            strengthStat++;
+
+            strengthStatsText.text = strengthStat.ToString();
+            statPointsText.text = statPoints.ToString();
+        }
+    }
+
+    public void SubtractStrength()
+    {
+        if (strengthStat - 1 > -1)
+        {
+            strengthStat--;
+            statPoints++;
+
+            strengthStatsText.text = strengthStat.ToString();
+            statPointsText.text = statPoints.ToString();
+        }
+    }
+
+    public void AddDefense()
+    {
+        if (statPoints > 0)
+        {
+            statPoints--;
+            defenseStat++;
+
+            defenseStatsText.text = defenseStat.ToString();
+            statPointsText.text = statPoints.ToString();
+        }
+    }
+
+    public void SubtractDefense()
+    {
+        if (defenseStat - 1 > -1)
+        {
+            defenseStat--;
+            statPoints++;
+
+            defenseStatsText.text = defenseStat.ToString();
+            statPointsText.text = statPoints.ToString();
+        }
+    }
+ 
 }
