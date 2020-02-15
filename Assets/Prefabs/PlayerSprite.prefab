@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4200310553964068369}
   - component: {fileID: 4200310553964068374}
+  - component: {fileID: -7492480896746826962}
   m_Layer: 0
   m_Name: PlayerSprite
   m_TagString: Untagged
@@ -70,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1c2d11b69eb555a418c763a729f60672, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ae1dd3567c0844330b995bc0859338eb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -91,5 +92,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1bc26a4b1f9824808a36550abe2bfc4a, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
