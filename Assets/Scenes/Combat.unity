@@ -393,7 +393,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 79734244}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 351337035}
+        m_MethodName: OnStatsButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &79734244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -630,6 +641,10 @@ MonoBehaviour:
   playerHUD: {fileID: 529850037}
   enemyHUD: {fileID: 1322993537}
   displayText: {fileID: 1614552872}
+  playerStats: {fileID: 4200310553964068375, guid: 061c656a795f744cb98b6067ee438b3a,
+    type: 3}
+  enemyStats: {fileID: 8793149364718449024, guid: de33aabe0861149698ea2b493d5712bb,
+    type: 3}
 --- !u!1 &355119209
 GameObject:
   m_ObjectHideFlags: 0

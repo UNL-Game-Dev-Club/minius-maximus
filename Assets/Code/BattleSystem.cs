@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 
@@ -24,8 +25,8 @@ public class BattleSystem : MonoBehaviour
     public Text displayText;
 
     //Instance of Player and Enemy
-    Unit playerUnit;
-    Unit enemyUnit;
+    PlayerUnit playerUnit;
+    EnemyUnit enemyUnit;
 
     // Start is called before the first frame update
     void Start()
@@ -39,10 +40,10 @@ public class BattleSystem : MonoBehaviour
     {
         //Spawns player prefab and assigns its stats to the playerUnit var
         GameObject playerGo = Instantiate(playerPrefab, playerBattleStation);
-        playerUnit = playerGo.GetComponent<Unit>();
+        playerUnit = playerGo.GetComponent<PlayerUnit>();
         //Spawns enemy prefab and assigns its stats to the enemyUnit var
         GameObject enemyGo = Instantiate(enemyPrefab, enemyBattleStation);
-        enemyUnit = enemyGo.GetComponent<Unit>();
+        enemyUnit = enemyGo.GetComponent<EnemyUnit>();
         //Assigns the health bar to each units health stat
         playerHUD.SetHUD(playerUnit);
         enemyHUD.SetHUD(enemyUnit);
@@ -70,15 +71,24 @@ public class BattleSystem : MonoBehaviour
         StartCoroutine(PlayerAttack());
     }
 
+    public void OnStatsButton()
+    {
+        if (state != BattleState.PLAYERTURN)
+        {
+            return;
+        }
+        SceneManager.LoadScene("CombatStatsEditor");
+    }
+
  
     IEnumerator PlayerAttack()
     {
         //Turns buttons off so player cannot attack twice
         DisableButton();
         //Calls the Take Damage function in the Unit.cs script and assings it to bool isDead to check if enemy dies
-        bool isDead = enemyUnit.TakeDamage(playerUnit.strength, enemyUnit.defense);
+        bool isDead = enemyUnit.TakeDamage(PlayerUnit.strength, EnemyUnit.defense);
 
-        enemyHUD.SetHp(enemyUnit.currentHealth);
+        enemyHUD.SetHp(EnemyUnit.currentHealth);
 
         yield return new WaitForSeconds(2f);
 
@@ -96,9 +106,9 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator EnemyTurn()
     {
-        bool isDead = playerUnit.TakeDamage(enemyUnit.strength, enemyUnit.defense);
+        bool isDead = playerUnit.TakeDamage(EnemyUnit.strength, PlayerUnit.defense);
 
-        playerHUD.SetHp(playerUnit.currentHealth);
+        playerHUD.SetHp(PlayerUnit.currentHealth);
 
         yield return new WaitForSeconds(1f);
 
