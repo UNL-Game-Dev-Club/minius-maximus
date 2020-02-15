@@ -5,11 +5,16 @@ using System;
 public class NavScript : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private Collision col;
+    Vector3 moveV=new Vector3(0,0,0);
+    
+    float xv=0;
+    float yv=0;
     // Start is called before the first frame update
     void Start()
     {
         rb=this.GetComponent<Rigidbody2D>();
-        transform.position=new Vector3(1,1,1);
+        transform.position=new Vector3(1,1,0);
     }
 
     // Update is called once per frame
@@ -17,54 +22,33 @@ public class NavScript : MonoBehaviour
     { 
         if(Input.GetKey(KeyCode.A)&&!Input.GetKey(KeyCode.D))
         {
-            if(Input.GetKey(KeyCode.W)&&!Input.GetKey(KeyCode.S))
-            {
-                rb.velocity=new Vector2(-Mathf.Sqrt(2),Mathf.Sqrt(2));
-            }
-            else if(!Input.GetKey(KeyCode.W)&&Input.GetKey(KeyCode.S))
-            {
-                rb.velocity=new Vector2(-Mathf.Sqrt(2),-Mathf.Sqrt(2));
-            }else if(!Input.GetKey(KeyCode.W)&&!Input.GetKey(KeyCode.S))
-            {
-                rb.velocity=new Vector2(-2f,0f);
-            }
+            xv=-(float)0.2;
         }
-        else if(Input.GetKey(KeyCode.D)&&!Input.GetKey(KeyCode.A))
+        else if(!Input.GetKey(KeyCode.A)&&Input.GetKey(KeyCode.D))
         {
-             if(Input.GetKey(KeyCode.W)&&!Input.GetKey(KeyCode.S))
-            {
-                rb.velocity=new Vector2(Mathf.Sqrt(2),Mathf.Sqrt(2));
+            xv=(float)0.2;
+        }else
+        {
+            if(xv>0.0){
+                xv+=-xv;
             }
-            else if(!Input.GetKey(KeyCode.W)&&Input.GetKey(KeyCode.S))
-            {
-                rb.velocity=new Vector2(Mathf.Sqrt(2),-Mathf.Sqrt(2));
-            }else if(!Input.GetKey(KeyCode.W)&&!Input.GetKey(KeyCode.S))
-            {
-                rb.velocity=new Vector2(2f,0f);
+            if(xv<0.0){
+                xv+=-xv;
             }
         }
-        else if(Input.GetKey(KeyCode.W)&&!Input.GetKey(KeyCode.S)
-                &&!Input.GetKey(KeyCode.A)&&!Input.GetKey(KeyCode.D))
-        {
-            rb.velocity=new Vector2(0f,2f);
-        }
-        
-        else if(!Input.GetKey(KeyCode.W)&&Input.GetKey(KeyCode.S)
-                &&!Input.GetKey(KeyCode.A)&&!Input.GetKey(KeyCode.D))
-        {
-                     rb.velocity=new Vector2(0f,-2f); 
-        }
-        else{
-            rb.velocity=new Vector2(0f,0f);
-        }
-        
+        moveV=new Vector3(xv,yv,0);
+        transform.position+=moveV;
+
     }
 
     void OnCollisionEnter(Collision col)
     {
-        if(col.gameObject.name=="overworldEnemy")
-        {
-            
+        this.col=col;
+        if(col.gameObject.name=="floor")
+        {   
+            yv=0;
+        }else{
+            yv--;
         }
     }
 }
