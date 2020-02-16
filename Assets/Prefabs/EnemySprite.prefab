@@ -94,3 +94,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 623951002b7984c6bbec55476e005dc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: d19611f926b2b485d95d84805fc950fc, type: 3}
+  - {fileID: 21300000, guid: 0518ad68c14d445aa8776d978df3b5ed, type: 3}
+  - {fileID: 21300000, guid: 1842dcf713c5a4dd987b1aea3ee2a4d8, type: 3}
+  - {fileID: 21300000, guid: 1562ef207afbe470488a1e804359fd3c, type: 3}
+  - {fileID: 21300000, guid: 3047bb2c2a53244b1bf9967659644fe0, type: 3}
+  - {fileID: 21300000, guid: c4c0cfa33ad414622a3f20a829f6162a, type: 3}
+  - {fileID: 21300000, guid: ae1dd3567c0844330b995bc0859338eb, type: 3}
+  - {fileID: 21300000, guid: 1d46411a9894c42bdb193231f048cc41, type: 3}
+  - {fileID: 21300000, guid: 0691c638a2f2a429d86191b5e633b50a, type: 3}
+  - {fileID: 21300000, guid: 8ddd69f71fb87417ab9716c3d107e2fb, type: 3}
+  - {fileID: 21300000, guid: 1011876444c60440b82d06dc2d792a79, type: 3}
