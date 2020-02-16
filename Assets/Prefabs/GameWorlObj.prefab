@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 7931135787635389919}
-  velocity: 0.1
+  velocity: 20
 --- !u!50 &3910656835011635216
 Rigidbody2D:
   serializedVersion: 4
