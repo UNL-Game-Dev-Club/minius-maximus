@@ -4257,9 +4257,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
-  strength: 2
-  defense: 6
-  speed: 5
+  strength: 4
+  defense: 4
+  speed: 1
   enemyNumber: 5
   button: {fileID: 46089812}
   sierraMist: {fileID: 664865079}
