@@ -485,12 +485,13 @@ MonoBehaviour:
   health: 10
   strength: 10
   defense: 10
+  speed: 0
   enemyNumber: 6
   button: {fileID: 46089812}
   sierraMist: {fileID: 664865079}
   sierraMistSprite: {fileID: 664865081}
   dialogue:
-    name: Regina
+    name: Regina the Boastful
     sentences:
     - Ugh why are you even talking to me you nerd. Buzz off.
 --- !u!61 &88840121
@@ -1995,6 +1996,7 @@ MonoBehaviour:
   health: 3
   strength: 2
   defense: 1
+  speed: 10
   enemyNumber: 1
   button: {fileID: 46089812}
   sierraMist: {fileID: 664865079}
@@ -2473,6 +2475,7 @@ MonoBehaviour:
   health: 5
   strength: 6
   defense: 0
+  speed: 0
   enemyNumber: 4
   button: {fileID: 46089812}
   sierraMist: {fileID: 664865079}
@@ -3520,12 +3523,13 @@ MonoBehaviour:
   health: 10
   strength: 10
   defense: 10
+  speed: 5
   enemyNumber: 9
   button: {fileID: 46089812}
   sierraMist: {fileID: 664865079}
   sierraMistSprite: {fileID: 664865081}
   dialogue:
-    name: Emily
+    name: Emily the Basic
     sentences:
     - OMg I am NOT a VSCO girl staaaaawp.
 --- !u!61 &879655097
@@ -3763,12 +3767,13 @@ MonoBehaviour:
   health: 10
   strength: 10
   defense: 10
+  speed: 10
   enemyNumber: 0
   button: {fileID: 46089812}
   sierraMist: {fileID: 664865079}
   sierraMistSprite: {fileID: 664865081}
   dialogue:
-    name: Britney
+    name: Britney the Perfect
     sentences:
     - I'm a perfect 10!
 --- !u!61 &890589301
@@ -3979,6 +3984,7 @@ MonoBehaviour:
   health: 2
   strength: 2
   defense: 6
+  speed: 5
   enemyNumber: 5
   button: {fileID: 46089812}
   sierraMist: {fileID: 664865079}
@@ -4105,6 +4111,7 @@ MonoBehaviour:
   health: 10
   strength: 10
   defense: 10
+  speed: 0
   enemyNumber: 7
   button: {fileID: 46089812}
   sierraMist: {fileID: 664865079}
@@ -4112,7 +4119,8 @@ MonoBehaviour:
   dialogue:
     name: Principal Treebread
     sentences:
-    - I'm a perfect 10!
+    - 'What are you doing out of class?!! '
+    - In my office now!
 --- !u!61 &963026386
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5484,6 +5492,7 @@ MonoBehaviour:
   health: 10
   strength: 10
   defense: 10
+  speed: 0
   enemyNumber: 2
   button: {fileID: 46089812}
   sierraMist: {fileID: 664865079}
@@ -5766,6 +5775,7 @@ MonoBehaviour:
   health: 50
   strength: 25
   defense: 100
+  speed: 100
   enemyNumber: 3
   button: {fileID: 46089812}
   sierraMist: {fileID: 664865079}
@@ -6966,12 +6976,13 @@ MonoBehaviour:
   health: 10
   strength: 3
   defense: 1
+  speed: 5
   enemyNumber: 8
   button: {fileID: 46089812}
   sierraMist: {fileID: 664865079}
   sierraMistSprite: {fileID: 664865081}
   dialogue:
-    name: Margo
+    name: Margo the Warrior of Justice
     sentences:
     - Stop opressing me
     - I WILL BE HEARD!!

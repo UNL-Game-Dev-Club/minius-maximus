@@ -24,6 +24,7 @@ public class RewardStatPoints : MonoBehaviour
             PlayerUnit.maxHealth = stats.healthStat;
             PlayerUnit.strength = stats.strengthStat;
             PlayerUnit.defense = stats.defenseStat;
+            PlayerUnit.totalDamage = 0;
 
             SceneManager.LoadScene("Overworld");
         }

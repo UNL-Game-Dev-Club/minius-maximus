@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
+public enum BattleState { START, PLAYERTURN, WON, LOST }
 
 public class BattleSystem : MonoBehaviour
 {
@@ -15,6 +15,7 @@ public class BattleSystem : MonoBehaviour
     public GameObject enemyPrefab;
     public GameObject attackButton;
     public GameObject statsButton;
+    public GameObject battleHUD;
 
     public Transform playerBattleStation;
     public Transform enemyBattleStation;
@@ -55,22 +56,17 @@ public class BattleSystem : MonoBehaviour
 
         yield return new WaitForSeconds(0.1f);
         //Switchs the turns to playerturn
+       
         state = BattleState.PLAYERTURN;
         PlayerTurn();
-        
+ 
     }
     //Allows the player to use buttons
     private void PlayerTurn()
     {
+        battleHUD.SetActive(true);
         attackButton.SetActive(true);
         statsButton.SetActive(true);
-        if(StatsSystem.counter > 0)
-        {
-            DisableButton();
-            StatsSystem.counter = 0;
-            state = BattleState.ENEMYTURN;
-            StartCoroutine(EnemyTurn());
-        }
     }
 
     //function that runs on attack button press
@@ -80,7 +76,8 @@ public class BattleSystem : MonoBehaviour
         {
             return;
         }
-        StartCoroutine(PlayerAttack());
+      
+        StartCoroutine(Battle());
     }
 
     public void OnStatsButton()
@@ -93,50 +90,79 @@ public class BattleSystem : MonoBehaviour
     }
 
  
-    IEnumerator PlayerAttack()
+    IEnumerator Battle()
     {
-        //Turns buttons off so player cannot attack twice
-        DisableButton();
-        //Calls the Take Damage function in the Unit.cs script and assings it to bool isDead to check if enemy dies
-        bool isDead = enemyUnit.TakeDamage(PlayerUnit.strength, EnemyUnit.defense);
-
-        enemyHUD.SetHp(EnemyUnit.currentHealth);
-        enemyHUD.SetHUD(enemyUnit);
-
-        yield return new WaitForSeconds(2f);
-
-        if (isDead)
+        if (PlayerUnit.speed > EnemyUnit.speed || PlayerUnit.speed == EnemyUnit.speed)
         {
-            state = BattleState.WON;
-            EndBattle();
+            //Turns buttons off so player cannot attack twice
+            DisableButton();
+            //Calls the Take Damage function in the Unit.cs script and assings it to bool isDead to check if enemy dies
+            bool isDead = enemyUnit.TakeDamage(PlayerUnit.strength, EnemyUnit.defense);
+
+            enemyHUD.SetHp(EnemyUnit.currentHealth);
+            enemyHUD.SetHUD(enemyUnit);
+
+            yield return new WaitForSeconds(2f);
+
+            if (isDead)
+            {
+                state = BattleState.WON;
+                EndBattle();
+            }
+            else
+            {
+                bool playerDead = playerUnit.TakeDamage(EnemyUnit.strength, PlayerUnit.defense);
+
+                playerHUD.SetHp(PlayerUnit.currentHealth);
+                playerHUD.SetHUD(playerUnit);
+                yield return new WaitForSeconds(1f);
+                if (playerDead)
+                {
+                    state = BattleState.LOST;
+                    EndBattle();
+                }
+                else
+                {
+                    state = BattleState.PLAYERTURN;
+                    PlayerTurn();
+                }
+            }
         }
-        else
+        else if (EnemyUnit.speed > PlayerUnit.speed)
         {
-            state = BattleState.ENEMYTURN;
-            StartCoroutine(EnemyTurn());
+            DisableButton();
+            bool isDead = playerUnit.TakeDamage(EnemyUnit.strength, PlayerUnit.defense);
+
+            playerHUD.SetHp(PlayerUnit.currentHealth);
+            playerHUD.SetHUD(playerUnit);
+
+            yield return new WaitForSeconds(2f);
+
+            if (isDead)
+            {
+                state = BattleState.LOST;
+                EndBattle();
+            }
+            else
+            {
+                bool enemyDead = enemyUnit.TakeDamage(PlayerUnit.strength, EnemyUnit.defense);
+                enemyHUD.SetHp(EnemyUnit.currentHealth);
+                enemyHUD.SetHUD(enemyUnit);
+                yield return new WaitForSeconds(1f);
+                if (enemyDead)
+                {
+                    state = BattleState.WON;
+                    EndBattle();
+                }
+                else
+                {
+                    state = BattleState.PLAYERTURN;
+                    PlayerTurn();
+                }
+            }
         }
     }
 
-    IEnumerator EnemyTurn()
-    {
-        bool isDead = playerUnit.TakeDamage(EnemyUnit.strength, PlayerUnit.defense);
-
-        playerHUD.SetHp(PlayerUnit.currentHealth);
-        playerHUD.SetHUD(playerUnit);
-
-        yield return new WaitForSeconds(1f);
-
-        if (isDead)
-        {
-            state = BattleState.LOST;
-            EndBattle();
-        }
-        else
-        {
-            state = BattleState.PLAYERTURN;
-            PlayerTurn();
-        }
-    }
 
     private void EndBattle()
     {
@@ -156,5 +182,6 @@ public class BattleSystem : MonoBehaviour
     {
         attackButton.SetActive(false);
         statsButton.SetActive(false);
+        battleHUD.SetActive(false);
     }
 }

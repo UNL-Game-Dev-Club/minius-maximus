@@ -10,7 +10,9 @@ public class DialogueTrig : MonoBehaviour
     [SerializeField] int health;
     [SerializeField] int strength;
     [SerializeField] int defense;
+    [SerializeField] int speed;
     [SerializeField] int enemyNumber;
+
     public GameObject button;
     public GameObject sierraMist;
     public SpriteRenderer sierraMistSprite;
@@ -62,6 +64,7 @@ public class DialogueTrig : MonoBehaviour
         EnemyUnit.maxHealth = health;
         EnemyUnit.strength = strength;
         EnemyUnit.defense = defense;
+        EnemyUnit.speed = speed;
         EnemyUnit.enemyNumber = enemyNumber;
 
         PlayerUnit.currentHealth = PlayerUnit.maxHealth;

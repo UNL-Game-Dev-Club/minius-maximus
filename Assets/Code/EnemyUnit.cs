@@ -13,6 +13,7 @@ public class EnemyUnit : MonoBehaviour
     public static int defense = 3;
     public static int currentHealth = 6;
     public static int enemyNumber;
+    public static int speed;
 
     private SpriteRenderer spriteRenderer;
 
@@ -30,13 +31,13 @@ public class EnemyUnit : MonoBehaviour
 
     public bool TakeDamage(int strength, int defense)
     {
-        if (defense / 2 >= strength)
+        if (defense >= strength)
         {
             currentHealth -= 1;
         }
         else
         {
-            currentHealth -= strength - defense/ 2;
+            currentHealth -= strength - defense;
         }
 
 
