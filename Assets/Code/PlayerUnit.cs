@@ -10,6 +10,8 @@ public class PlayerUnit : MonoBehaviour
     public static int defense = 3;
     public static int currentHealth = 6;
 
+    public static int totalDamage = 0;
+
 
     public bool TakeDamage(int strength, int defense)
     {
@@ -20,7 +22,9 @@ public class PlayerUnit : MonoBehaviour
         }
         else
         {
-            currentHealth -= strength - defense / 2;
+            int damage = strength - defense / 2;
+            currentHealth -= damage;
+            totalDamage += damage;
         }
 
 

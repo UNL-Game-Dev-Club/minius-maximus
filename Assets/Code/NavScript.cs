@@ -15,7 +15,6 @@ public class NavScript : MonoBehaviour
     void Start()
     {
         rb=this.GetComponent<Rigidbody2D>();
-        transform.position=new Vector3(1,1,0);
     }
 
     // Update is called once per frame

@@ -6,12 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class DialogueTrig : MonoBehaviour
 {
-    public int health;
-    public int strength;
-    public int defense;
-    public int enemyNumber;
+    [SerializeField] int health;
+    [SerializeField] int strength;
+    [SerializeField] int defense;
+    [SerializeField] int enemyNumber;
 
     DialogueManager dialogueManager;
+
+  
 
     private void Start()
     {
@@ -23,6 +25,7 @@ public class DialogueTrig : MonoBehaviour
     {
         if (dialogueManager.isTrue)
         {
+            dialogueManager.isTrue = false;
             Fight();
         }
     }
@@ -31,13 +34,7 @@ public class DialogueTrig : MonoBehaviour
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-
-    }
-
-
-    public void Fight()
-    {
+        dialogueManager.StartDialogue(dialogue);
         EnemyUnit.currentHealth = health;
         EnemyUnit.maxHealth = health;
         EnemyUnit.strength = strength;
@@ -46,7 +43,11 @@ public class DialogueTrig : MonoBehaviour
 
         PlayerUnit.currentHealth = PlayerUnit.maxHealth;
 
+    }
 
+
+    public void Fight()
+    {
 
         SceneManager.LoadScene("Combat");
     }

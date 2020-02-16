@@ -137,6 +137,8 @@ public class BattleSystem : MonoBehaviour
     {
         if (state == BattleState.WON)
         {
+            TurnOffEnemy.bossFight++;
+            PlayerManager.victoryCounter++;
             SceneManager.LoadScene("Victory");
         }
         else if (state == BattleState.LOST)
