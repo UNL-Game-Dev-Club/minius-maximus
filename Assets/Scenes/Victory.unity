@@ -237,7 +237,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4d815f646a2f94d48bb1f9c93c5b7097, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 302f8294da87fd14e80446a6afad54f0, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -367,7 +367,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1403904067}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -614,9 +614,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 1459522042}
   - {fileID: 939445491}
   - {fileID: 2116837262}
+  - {fileID: 1459522042}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -634,15 +634,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 103733558, guid: e5e49b58877ad4f379d0d389d6313e41, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 709803378, guid: e5e49b58877ad4f379d0d389d6313e41, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1646936889, guid: e5e49b58877ad4f379d0d389d6313e41, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1696421062, guid: e5e49b58877ad4f379d0d389d6313e41, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5714624860924649544, guid: e5e49b58877ad4f379d0d389d6313e41,
         type: 3}
@@ -692,7 +696,7 @@ PrefabInstance:
     - target: {fileID: 5714624860926934626, guid: e5e49b58877ad4f379d0d389d6313e41,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5714624860926934626, guid: e5e49b58877ad4f379d0d389d6313e41,
         type: 3}
@@ -926,7 +930,7 @@ RectTransform:
   m_Children:
   - {fileID: 1542472978}
   m_Father: {fileID: 1403904067}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
