@@ -482,10 +482,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d7ff13444da1b04ebcf0ee1b657869f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
-  strength: 10
-  defense: 10
-  speed: 0
+  health: 20
+  strength: 3
+  defense: 2
+  speed: 4
   enemyNumber: 6
   button: {fileID: 46089812}
   sierraMist: {fileID: 664865079}
@@ -2162,9 +2162,9 @@ MonoBehaviour:
   - {fileID: 1997105889}
   - {fileID: 594004647}
   - {fileID: 418570957}
-  - {fileID: 890589301}
   - {fileID: 879655097}
   - {fileID: 88840121}
+  - {fileID: 890589301}
   - {fileID: 1441441505}
   - {fileID: 963026386}
   enemyFight:
@@ -3714,10 +3714,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d7ff13444da1b04ebcf0ee1b657869f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
-  strength: 10
-  defense: 10
-  speed: 5
+  health: 4
+  strength: 12
+  defense: 1
+  speed: 7
   enemyNumber: 9
   button: {fileID: 46089812}
   sierraMist: {fileID: 664865079}
@@ -3961,7 +3961,7 @@ MonoBehaviour:
   health: 10
   strength: 10
   defense: 10
-  speed: 10
+  speed: 5
   enemyNumber: 0
   button: {fileID: 46089812}
   sierraMist: {fileID: 664865079}
@@ -4301,9 +4301,9 @@ Transform:
   - {fileID: 510989936}
   - {fileID: 636924748}
   - {fileID: 1537526798}
-  - {fileID: 1797001275}
   - {fileID: 1759043951}
   - {fileID: 1351039103}
+  - {fileID: 1797001275}
   - {fileID: 399506475}
   - {fileID: 754721285}
   m_Father: {fileID: 0}
@@ -4383,7 +4383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d7ff13444da1b04ebcf0ee1b657869f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 25
   strength: 10
   defense: 10
   speed: 0
@@ -5390,12 +5390,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1351039102}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 575, y: -4.05, z: 24.64071}
+  m_LocalPosition: {x: 508.7, y: -4.05, z: 24.64071}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 88840119}
   m_Father: {fileID: 930062732}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1351039104
 SpriteRenderer:
@@ -5764,10 +5764,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d7ff13444da1b04ebcf0ee1b657869f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
-  strength: 10
-  defense: 10
-  speed: 0
+  health: 3
+  strength: 12
+  defense: 30
+  speed: 1
   enemyNumber: 2
   button: {fileID: 46089812}
   sierraMist: {fileID: 664865079}
@@ -6759,12 +6759,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1759043950}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 508.9, y: -4.68, z: 24.64071}
+  m_LocalPosition: {x: 422.3, y: -4.68, z: 24.64071}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 879655095}
   m_Father: {fileID: 930062732}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1759043952
 SpriteRenderer:
@@ -6922,12 +6922,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1797001274}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 438, y: -3.8993626, z: 24.64071}
+  m_LocalPosition: {x: 575.3, y: -3.8993626, z: 24.64071}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 890589299}
   m_Father: {fileID: 930062732}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1797001276
 SpriteRenderer:

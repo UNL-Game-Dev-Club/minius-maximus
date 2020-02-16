@@ -22,14 +22,14 @@ public class PlayerUnit : MonoBehaviour
     public bool TakeDamage(int strength, int defense)
     {
         //Prevents Damage Going Negative
-        if (defense >= strength)
+        if (defense / 2 >= strength)
         {
             currentHealth -= 1;
             totalDamage += 1;
         }
         else
         {
-            int damage = strength - defense;
+            int damage = strength - defense / 2;
             currentHealth -= damage;
             int damageAdded = damage;
             if (damage > currentHealth)
