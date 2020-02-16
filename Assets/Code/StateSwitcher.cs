@@ -7,6 +7,6 @@ public class StateSwitcher : MonoBehaviour
    
    public void ChangeScene(string sceneName)
    {
-       SceneManager.LoadScene(sceneName);
+       SceneManager.LoadScene("Combat");
    }
 }
