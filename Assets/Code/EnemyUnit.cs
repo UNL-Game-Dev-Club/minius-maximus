@@ -31,13 +31,13 @@ public class EnemyUnit : MonoBehaviour
 
     public bool TakeDamage(int strength, int defense)
     {
-        if (defense >= strength)
+        if (defense / 2 >= strength)
         {
             currentHealth -= 1;
         }
         else
         {
-            currentHealth -= strength - defense;
+            currentHealth -= strength - defense / 2;
         }
 
 
