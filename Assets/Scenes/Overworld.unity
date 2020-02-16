@@ -817,7 +817,6 @@ MonoBehaviour:
   - {fileID: 839928096}
   - {fileID: 1982991627}
   - {fileID: 939537786}
-  - {fileID: 0}
 --- !u!4 &138582720
 Transform:
   m_ObjectHideFlags: 0
@@ -4383,10 +4382,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d7ff13444da1b04ebcf0ee1b657869f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 25
-  strength: 10
-  defense: 10
-  speed: 0
+  health: 50
+  strength: 4
+  defense: 0
+  speed: 3
   enemyNumber: 7
   button: {fileID: 46089812}
   sierraMist: {fileID: 664865079}

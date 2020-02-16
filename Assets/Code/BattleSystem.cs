@@ -199,7 +199,14 @@ public class BattleSystem : MonoBehaviour
             fightMusic.Stop();
             bossMusic.Stop();
             playingMusic = false;
-            SceneManager.LoadScene("Victory");
+            if (EnemyUnit.enemyNumber == 7)
+            {
+                SceneManager.LoadScene("GameWin");
+            }
+            else
+            {
+                SceneManager.LoadScene("Victory");
+            }
         }
         else if (state == BattleState.LOST)
         {
