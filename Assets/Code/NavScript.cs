@@ -11,11 +11,19 @@ public class NavScript : MonoBehaviour
     GameObject diaManagerObj;
     DialogueManager diaManag;
     public SpriteRenderer spriteRenderer;
+    private Animator animator;
 
     [SerializeField] float velocity = 0.2f;
     
     float xv=0;
     float yv=0;
+
+    private void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,12 +49,14 @@ public class NavScript : MonoBehaviour
         {
             xv=- velocity;
             spriteRenderer.flipX = true;
+            animator.SetBool("isRunning", true);
 
         }
         else if(!Input.GetKey(KeyCode.A)&&Input.GetKey(KeyCode.D))
         {
             xv= velocity;
             spriteRenderer.flipX = false;
+            animator.SetBool("isRunning", true);
         }
         else
         {
@@ -56,6 +66,7 @@ public class NavScript : MonoBehaviour
             if(xv<0.0){
                 xv+=-xv;
             }
+            animator.SetBool("isRunning", false);
         }
         if(dcol&&Input.GetKey(KeyCode.W))
         {
