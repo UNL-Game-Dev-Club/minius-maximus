@@ -2144,7 +2144,7 @@ MonoBehaviour:
   health: 10
   strength: 3
   defense: 1
-  enemyNumber: 9
+  enemyNumber: 8
   button: {fileID: 46089812}
   sierraMist: {fileID: 664865079}
   sierraMistSprite: {fileID: 664865081}

@@ -36,9 +36,9 @@ public class EnemyUnit : MonoBehaviour
         }
         else
         {
-            currentHealth -= strength - defense / 2;
+            currentHealth -= strength - defense/ 2;
         }
-        currentHealth -= strength - defense / 2;
+
 
         if (currentHealth <= 0)
         {
