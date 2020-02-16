@@ -59,22 +59,12 @@ public class BattleSystem : MonoBehaviour
     {
         attackButton.SetActive(true);
         statsButton.SetActive(true);
-        StartCoroutine(CheckStatChange());
-    }
-
-    IEnumerator CheckStatChange()
-    {
-        if (StatsSystem.counter > 0)
+        if(StatsSystem.counter > 0)
         {
             DisableButton();
             StatsSystem.counter = 0;
-            yield return new WaitForSeconds(2f);
             state = BattleState.ENEMYTURN;
             StartCoroutine(EnemyTurn());
-        }
-        else
-        {
-            yield return new WaitForSeconds(0.1f);
         }
     }
 
@@ -107,9 +97,6 @@ public class BattleSystem : MonoBehaviour
 
         enemyHUD.SetHp(EnemyUnit.currentHealth);
 
-        enemyHUD.SetHUD(enemyUnit);
-        
-
         yield return new WaitForSeconds(2f);
 
         if (isDead)
@@ -129,8 +116,6 @@ public class BattleSystem : MonoBehaviour
         bool isDead = playerUnit.TakeDamage(EnemyUnit.strength, PlayerUnit.defense);
 
         playerHUD.SetHp(PlayerUnit.currentHealth);
-
-        playerHUD.SetHUD(playerUnit);
 
         yield return new WaitForSeconds(1f);
 

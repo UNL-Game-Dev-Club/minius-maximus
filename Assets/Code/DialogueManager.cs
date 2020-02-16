@@ -9,6 +9,8 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> sentences;
     public Text nameText;
     public Text dialogueText;
+
+    public bool isTrue = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,8 +43,9 @@ public class DialogueManager : MonoBehaviour
 
 
 
-    void EndDialogue(){
-         ChangeScene("Combat");
+    public bool EndDialogue(){
+        isTrue = true;
+        return true;
     }
 
     // Update is called once per frame
@@ -51,8 +54,5 @@ public class DialogueManager : MonoBehaviour
          
     }
 
-    public void ChangeScene(string sceneName)
-    {
-       SceneManager.LoadScene("Combat");
-    }
+   
 }

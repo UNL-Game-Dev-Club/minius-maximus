@@ -11,8 +11,9 @@ public class RewardStatPoints : MonoBehaviour
     private void Start()
     {
         stats = statsSystem.GetComponent<StatsSystem>();
-        stats.statPoints = PlayerUnit.maxHealth - PlayerUnit.currentHealth + 2;
+        stats.statPoints++;
         stats.statPointsText.text = stats.statPoints.ToString();
+        PlayerUnit.currentHealth = PlayerUnit.maxHealth;
         stats.healthStatsText.text = PlayerUnit.currentHealth.ToString();
         stats.healthStat = PlayerUnit.currentHealth;
     }
@@ -21,7 +22,7 @@ public class RewardStatPoints : MonoBehaviour
     {
         if (stats.statPoints == 0)
         {
-            PlayerUnit.currentHealth = stats.healthStat;
+            PlayerUnit.maxHealth = stats.healthStat;
             PlayerUnit.strength = stats.strengthStat;
             PlayerUnit.defense = stats.defenseStat;
 
