@@ -67,7 +67,12 @@ public class DialogueTrig : MonoBehaviour
         EnemyUnit.speed = speed;
         EnemyUnit.enemyNumber = enemyNumber;
 
-        PlayerUnit.currentHealth = PlayerUnit.maxHealth;
+        PlayerUnit.maxHealth = PlayerUnit.currentHealth;
+
+        PlayerUnit.healthBefore = PlayerUnit.currentHealth;
+        PlayerUnit.strengthBefore = PlayerUnit.strength;
+        PlayerUnit.defenseBefore = PlayerUnit.defense;
+        PlayerUnit.speedBefore = PlayerUnit.speed;
     }
 
 

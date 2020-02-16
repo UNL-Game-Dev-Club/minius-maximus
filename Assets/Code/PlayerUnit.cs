@@ -13,6 +13,11 @@ public class PlayerUnit : MonoBehaviour
 
     public static int totalDamage = 0;
 
+    public static int healthBefore;
+    public static int strengthBefore;
+    public static int defenseBefore;
+    public static int speedBefore;
+
 
     public bool TakeDamage(int strength, int defense)
     {
@@ -26,7 +31,12 @@ public class PlayerUnit : MonoBehaviour
         {
             int damage = strength - defense;
             currentHealth -= damage;
-            totalDamage += damage;
+            int damageAdded = damage;
+            if (damage > currentHealth)
+            {
+                damageAdded = currentHealth;
+            }
+            totalDamage += damageAdded;
         }
 
 
