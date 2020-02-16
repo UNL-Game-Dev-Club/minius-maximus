@@ -10,6 +10,7 @@ public class NavScript : MonoBehaviour
     private bool dcol=false;
     GameObject diaManagerObj;
     DialogueManager diaManag;
+    public SpriteRenderer spriteRenderer;
 
     [SerializeField] float velocity = 0.2f;
     
@@ -39,11 +40,15 @@ public class NavScript : MonoBehaviour
         if(Input.GetKey(KeyCode.A)&&!Input.GetKey(KeyCode.D))
         {
             xv=- velocity;
+            spriteRenderer.flipX = true;
+
         }
         else if(!Input.GetKey(KeyCode.A)&&Input.GetKey(KeyCode.D))
         {
             xv= velocity;
-        }else
+            spriteRenderer.flipX = false;
+        }
+        else
         {
             if(xv>0.0){
                 xv+=-xv;
