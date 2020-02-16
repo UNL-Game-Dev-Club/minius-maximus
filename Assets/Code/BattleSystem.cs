@@ -34,6 +34,7 @@ public class BattleSystem : MonoBehaviour
     public AudioSource hitSound;
     public static bool playingMusic = false;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -64,6 +65,7 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator SetUpBattle()
     {
+
         //Spawns player prefab and assigns its stats to the playerUnit var
         GameObject playerGo = Instantiate(playerPrefab, playerBattleStation);
         playerUnit = playerGo.GetComponent<PlayerUnit>();

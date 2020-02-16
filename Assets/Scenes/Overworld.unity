@@ -628,7 +628,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6e7ff1cc9060a754982c52e13ef7ac31, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0e2fd492100000000600e49210000000, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2471,10 +2471,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d7ff13444da1b04ebcf0ee1b657869f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
+  health: 15
   strength: 6
   defense: 0
-  speed: 0
+  speed: 2
   enemyNumber: 4
   button: {fileID: 46089812}
   sierraMist: {fileID: 664865079}
@@ -4257,9 +4257,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
-  strength: 4
+  strength: 3
   defense: 4
-  speed: 1
+  speed: 0
   enemyNumber: 5
   button: {fileID: 46089812}
   sierraMist: {fileID: 664865079}

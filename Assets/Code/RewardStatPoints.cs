@@ -22,6 +22,7 @@ public class RewardStatPoints : MonoBehaviour
         if (stats.statPoints == 0)
         {
             PlayerUnit.maxHealth = stats.healthStat;
+            PlayerUnit.currentHealth = stats.healthStat;
             PlayerUnit.strength = stats.strengthStat;
             PlayerUnit.defense = stats.defenseStat;
             PlayerUnit.speed = stats.speedStat;
