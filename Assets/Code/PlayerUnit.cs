@@ -20,6 +20,7 @@ public class PlayerUnit : MonoBehaviour
         if (defense >= strength)
         {
             currentHealth -= 1;
+            totalDamage += 1;
         }
         else
         {
