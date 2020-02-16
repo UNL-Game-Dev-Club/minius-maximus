@@ -13,7 +13,7 @@ public class NavScript : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     private Animator animator;
 
-    [SerializeField] float velocity = 0.2f;
+    [SerializeField] float velocity = 20f;
     
     float xv=0;
     float yv=0;
@@ -47,14 +47,14 @@ public class NavScript : MonoBehaviour
         }
         if(Input.GetKey(KeyCode.A)&&!Input.GetKey(KeyCode.D))
         {
-            xv=- velocity;
+            xv=- velocity * Time.deltaTime;
             spriteRenderer.flipX = true;
             animator.SetBool("isRunning", true);
 
         }
         else if(!Input.GetKey(KeyCode.A)&&Input.GetKey(KeyCode.D))
         {
-            xv= velocity;
+            xv= velocity * Time.deltaTime;
             spriteRenderer.flipX = false;
             animator.SetBool("isRunning", true);
         }
