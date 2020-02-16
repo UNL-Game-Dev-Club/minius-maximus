@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerUnit : MonoBehaviour
 {
     public static int maxHealth = 4;
-    public static int strength = 19;
+    public static int strength = 3;
     public static int defense = 3;
     public static int currentHealth = 4;
     public static int speed = 3;
