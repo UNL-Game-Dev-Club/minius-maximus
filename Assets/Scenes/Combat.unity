@@ -1020,8 +1020,6 @@ MonoBehaviour:
   playerHUD: {fileID: 529850037}
   enemyHUD: {fileID: 706314483}
   displayText: {fileID: 1614552872}
-  fightMusic: {fileID: 1179018410}
-  bossMusic: {fileID: 1228154954}
   hitSound: {fileID: 379222663}
 --- !u!1 &355119209
 GameObject:
@@ -1536,7 +1534,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 195.1, y: -116.600006}
+  m_AnchoredPosition: {x: 731, y: -311}
   m_SizeDelta: {x: 390.2, y: 233.20001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &529850037
@@ -2037,7 +2035,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -195, y: -116.600006}
+  m_AnchoredPosition: {x: -754, y: -314}
   m_SizeDelta: {x: 390, y: 233.20001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &706314481
