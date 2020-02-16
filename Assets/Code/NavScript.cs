@@ -8,12 +8,16 @@ public class NavScript : MonoBehaviour
     private Collision col;
     Vector3 moveV=new Vector3(0,0,0);
     private bool dcol=false;
+    GameObject diaManagerObj;
+    DialogueManager diaManag;
     
     float xv=0;
     float yv=0;
     // Start is called before the first frame update
     void Start()
     {
+        diaManagerObj= GameObject.Find("DialogueManager");
+        diaManag=diaManagerObj.GetComponent(typeof(DialogueManager)) as DialogueManager;
         rb=this.GetComponent<Rigidbody2D>();
         transform.position=new Vector3(1,1,0);
     }
@@ -21,7 +25,14 @@ public class NavScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     { 
-        if(!dcol){
+       if(diaManag.dialogueStarted==false){
+            move();
+       } 
+    }
+
+
+    public void move(){
+         if(!dcol){
             yv=(float)(yv*0.90);
         }
         if(Input.GetKey(KeyCode.A)&&!Input.GetKey(KeyCode.D))
@@ -47,7 +58,6 @@ public class NavScript : MonoBehaviour
         }
         moveV=new Vector3(xv,yv,0);        
         transform.position+=moveV;
-
     }
 
     void OnCollisionEnter2D(Collision2D col)
