@@ -196,12 +196,14 @@ public class BattleSystem : MonoBehaviour
             PlayerManager.victoryCounter++;
             fightMusic.Stop();
             bossMusic.Stop();
+            playingMusic = false;
             SceneManager.LoadScene("Victory");
         }
         else if (state == BattleState.LOST)
         {
             fightMusic.Stop();
             bossMusic.Stop();
+            playingMusic = false;
             SceneManager.LoadScene("GameOver");
         }
     }
