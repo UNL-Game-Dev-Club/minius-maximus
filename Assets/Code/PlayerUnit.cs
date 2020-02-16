@@ -18,7 +18,7 @@ public class PlayerUnit : MonoBehaviour
         //Prevents Damage Going Negative
         if (defense / 2 >= strength)
         {
-            currentHealth -= 0;
+            currentHealth -= 1;
         }
         else
         {
