@@ -21,8 +21,8 @@ public class DialogueTrig : MonoBehaviour
 
     private void Start()
     {
-        button = GameObject.Find("Button");
-        sierraMist = GameObject.Find("Sierra Mist");
+        //button = GameObject.Find("Button");
+        //sierraMist = GameObject.Find("Sierra Mist");
         sierraMistSprite = sierraMist.GetComponent(typeof(SpriteRenderer)) as SpriteRenderer;
         dialogueManager = FindObjectOfType<DialogueManager>();
         Debug.Log(button);
