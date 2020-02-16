@@ -490,9 +490,9 @@ MonoBehaviour:
   sierraMist: {fileID: 664865079}
   sierraMistSprite: {fileID: 664865081}
   dialogue:
-    name: Cheerleader
+    name: Regina
     sentences:
-    - I'm a perfect 10!
+    - Ugh why are you even talking to me you nerd. Buzz off.
 --- !u!61 &88840121
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -594,7 +594,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 91109898}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.38, y: 2.74, z: 5}
+  m_LocalPosition: {x: 0.55, y: 2, z: 5}
   m_LocalScale: {x: 1, y: 1.06, z: 1}
   m_Children: []
   m_Father: {fileID: 113895197}
@@ -950,7 +950,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 237423277}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 80.4, y: 2.74, z: 5}
+  m_LocalPosition: {x: 80.4, y: 2, z: 5}
   m_LocalScale: {x: 1, y: 1.06, z: 1}
   m_Children: []
   m_Father: {fileID: 113895197}
@@ -1031,7 +1031,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 300582262}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 32.4, y: 2.74, z: 5}
+  m_LocalPosition: {x: 32.4, y: 2, z: 5}
   m_LocalScale: {x: 1, y: 1.06, z: 1}
   m_Children: []
   m_Father: {fileID: 113895197}
@@ -1453,7 +1453,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 438453868}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 48.4, y: 2.74, z: 5}
+  m_LocalPosition: {x: 48.4, y: 2, z: 5}
   m_LocalScale: {x: 1, y: 1.06, z: 1}
   m_Children: []
   m_Father: {fileID: 113895197}
@@ -1850,7 +1850,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 655808116}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 160.4, y: 2.74, z: 5}
+  m_LocalPosition: {x: 160.4, y: 2, z: 5}
   m_LocalScale: {x: 1, y: 1.06, z: 1}
   m_Children: []
   m_Father: {fileID: 113895197}
@@ -2056,7 +2056,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 726908845}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.6, y: 2.74, z: 5}
+  m_LocalPosition: {x: -15.2, y: 2, z: 5}
   m_LocalScale: {x: 1, y: 1.06, z: 1}
   m_Children: []
   m_Father: {fileID: 113895197}
@@ -2137,7 +2137,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 749265557}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.5, y: 2.74, z: 5}
+  m_LocalPosition: {x: 16.5, y: 2, z: 5}
   m_LocalScale: {x: 1, y: 1.06, z: 1}
   m_Children: []
   m_Father: {fileID: 113895197}
@@ -2434,9 +2434,9 @@ MonoBehaviour:
   sierraMist: {fileID: 664865079}
   sierraMistSprite: {fileID: 664865081}
   dialogue:
-    name: Cheerleader
+    name: Emily
     sentences:
-    - I'm a perfect 10!
+    - OMg I am NOT a VSCO girl staaaaawp.
 --- !u!61 &879655097
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2515,7 +2515,7 @@ MonoBehaviour:
   sierraMist: {fileID: 664865079}
   sierraMistSprite: {fileID: 664865081}
   dialogue:
-    name: Cheerleader
+    name: Britney
     sentences:
     - I'm a perfect 10!
 --- !u!61 &890589301
@@ -2731,7 +2731,7 @@ MonoBehaviour:
   sierraMist: {fileID: 664865079}
   sierraMistSprite: {fileID: 664865081}
   dialogue:
-    name: Olga
+    name: Olga of the Soup
     sentences:
     - Soups Ready
     - Soup soup soup
@@ -2857,7 +2857,7 @@ MonoBehaviour:
   sierraMist: {fileID: 664865079}
   sierraMistSprite: {fileID: 664865081}
   dialogue:
-    name: Cheerleader
+    name: Principal Treebread
     sentences:
     - I'm a perfect 10!
 --- !u!61 &963026386
@@ -2971,7 +2971,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1187642981}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -31.6, y: 2.74, z: 5}
+  m_LocalPosition: {x: -31, y: 2, z: 5}
   m_LocalScale: {x: 1, y: 1.06, z: 1}
   m_Children: []
   m_Father: {fileID: 113895197}
@@ -3061,8 +3061,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 80.7, y: 0.049994}
-  m_SizeDelta: {x: 764.3, y: 50}
+  m_AnchoredPosition: {x: -23.4, y: -104}
+  m_SizeDelta: {x: 972.5, y: 258}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1237853700
 MonoBehaviour:
@@ -3178,8 +3178,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 126.3, y: -85.3}
-  m_SizeDelta: {x: 412.6, y: 35.4}
+  m_AnchoredPosition: {x: -88.52501, y: -150.29999}
+  m_SizeDelta: {x: 842.25, y: 165.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1351039102
 GameObject:
@@ -3288,7 +3288,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1352114295}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 112.4, y: 2.74, z: 5}
+  m_LocalPosition: {x: 112.4, y: 2, z: 5}
   m_LocalScale: {x: 1, y: 1.06, z: 1}
   m_Children: []
   m_Father: {fileID: 113895197}
@@ -3399,7 +3399,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1374987529}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 64.4, y: 2.74, z: 5}
+  m_LocalPosition: {x: 64.4, y: 2, z: 5}
   m_LocalScale: {x: 1, y: 1.06, z: 1}
   m_Children: []
   m_Father: {fileID: 113895197}
@@ -3507,9 +3507,9 @@ MonoBehaviour:
   sierraMist: {fileID: 664865079}
   sierraMistSprite: {fileID: 664865081}
   dialogue:
-    name: Cheerleader
+    name: Winter
     sentences:
-    - I'm a perfect 10!
+    - '*insert something edgy'
 --- !u!61 &1441441505
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3627,7 +3627,7 @@ MonoBehaviour:
   sierraMist: {fileID: 664865079}
   sierraMistSprite: {fileID: 664865081}
   dialogue:
-    name: Cheerleader
+    name: ...
     sentences:
     - ...
 --- !u!61 &1522972867
@@ -3763,7 +3763,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1607766891}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 128.4, y: 2.74, z: 5}
+  m_LocalPosition: {x: 128.4, y: 2, z: 5}
   m_LocalScale: {x: 1, y: 1.06, z: 1}
   m_Children: []
   m_Father: {fileID: 113895197}
@@ -3844,7 +3844,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1740824975}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 96.4, y: 2.74, z: 5}
+  m_LocalPosition: {x: 96.4, y: 2, z: 5}
   m_LocalScale: {x: 1, y: 1.06, z: 1}
   m_Children: []
   m_Father: {fileID: 113895197}
@@ -4248,7 +4248,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2059140326}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 144.4, y: 2.74, z: 5}
+  m_LocalPosition: {x: 144.4, y: 2, z: 5}
   m_LocalScale: {x: 1, y: 1.06, z: 1}
   m_Children: []
   m_Father: {fileID: 113895197}
