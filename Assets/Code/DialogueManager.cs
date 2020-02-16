@@ -10,17 +10,20 @@ public class DialogueManager : MonoBehaviour
     public Text nameText;
     public Text dialogueText;
 
+    public bool dialogueStarted;
+
     public bool isTrue = false;
     // Start is called before the first frame update
     void Start()
     {
+        dialogueStarted=false;
         sentences=new Queue<string>();
     }
 
     public void StartDialogue(Dialogue dialogue)
     {
+        dialogueStarted=true;
         nameText.text=dialogue.name;
-        Debug.Log("Starting conversation with "+dialogue.name);
         sentences.Clear();
         foreach(string sentence in dialogue.sentences){
             sentences.Enqueue(sentence);
@@ -46,6 +49,7 @@ public class DialogueManager : MonoBehaviour
     public bool EndDialogue(){
         isTrue = true;
         return true;
+        dialogueStarted=false;
     }
 
     // Update is called once per frame
