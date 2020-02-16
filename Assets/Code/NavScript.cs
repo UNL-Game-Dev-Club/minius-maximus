@@ -10,6 +10,8 @@ public class NavScript : MonoBehaviour
     private bool dcol=false;
     GameObject diaManagerObj;
     DialogueManager diaManag;
+
+    [SerializeField] float velocity = 0.2f;
     
     float xv=0;
     float yv=0;
@@ -36,11 +38,11 @@ public class NavScript : MonoBehaviour
         }
         if(Input.GetKey(KeyCode.A)&&!Input.GetKey(KeyCode.D))
         {
-            xv=-(float)0.1;
+            xv=- velocity;
         }
         else if(!Input.GetKey(KeyCode.A)&&Input.GetKey(KeyCode.D))
         {
-            xv=(float)0.1;
+            xv= velocity;
         }else
         {
             if(xv>0.0){

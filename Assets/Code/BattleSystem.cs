@@ -43,9 +43,12 @@ public class BattleSystem : MonoBehaviour
         //Spawns player prefab and assigns its stats to the playerUnit var
         GameObject playerGo = Instantiate(playerPrefab, playerBattleStation);
         playerUnit = playerGo.GetComponent<PlayerUnit>();
+        playerGo.transform.SetPositionAndRotation(new Vector3(playerBattleStation.transform.position.x, playerBattleStation.transform.position.y, -1), Quaternion.identity);
+
         //Spawns enemy prefab and assigns its stats to the enemyUnit var
         GameObject enemyGo = Instantiate(enemyPrefab, enemyBattleStation);
         enemyUnit = enemyGo.GetComponent<EnemyUnit>();
+        enemyGo.transform.SetPositionAndRotation(new Vector3(enemyBattleStation.transform.position.x, enemyBattleStation.transform.position.y, -1), Quaternion.identity);
         //Assigns the health bar to each units health stat
         playerHUD.SetHUD(playerUnit);
         enemyHUD.SetHUD(enemyUnit);
