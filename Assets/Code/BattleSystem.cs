@@ -36,6 +36,8 @@ public class BattleSystem : MonoBehaviour
         StartCoroutine(SetUpBattle());
     }
 
+  
+
     IEnumerator SetUpBattle()
     {
         //Spawns player prefab and assigns its stats to the playerUnit var
