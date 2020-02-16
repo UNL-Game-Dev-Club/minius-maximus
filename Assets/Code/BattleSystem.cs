@@ -29,12 +29,33 @@ public class BattleSystem : MonoBehaviour
     PlayerUnit playerUnit;
     EnemyUnit enemyUnit;
 
+    public static AudioSource fightMusic;
+    public static AudioSource bossMusic;
     public AudioSource hitSound;
+    public static bool playingMusic = false;
 
     // Start is called before the first frame update
     void Start()
     {
         state = BattleState.START;
+
+        if (!playingMusic)
+        {
+            fightMusic = GameObject.Find("Fight").GetComponent<AudioSource>();
+            bossMusic = GameObject.Find("Boss").GetComponent<AudioSource>();
+            DontDestroyOnLoad(fightMusic);
+            DontDestroyOnLoad(bossMusic);
+            if (EnemyUnit.enemyNumber == 7)
+            {
+                bossMusic.Play();
+            }
+            else
+            {
+                fightMusic.Play();
+            }
+            playingMusic = true;
+        }
+
         //Calls the SetUpBattle function
         StartCoroutine(SetUpBattle());
     }
@@ -74,21 +95,18 @@ public class BattleSystem : MonoBehaviour
     //function that runs on attack button press
     public void OnAttackButton()
     {
-        if (state != BattleState.PLAYERTURN)
+        if (state == BattleState.PLAYERTURN)
         {
-            return;
+            StartCoroutine(Battle());
         }
-      
-        StartCoroutine(Battle());
     }
 
     public void OnStatsButton()
     {
-        if (state != BattleState.PLAYERTURN)
+        if (state == BattleState.PLAYERTURN)
         {
-            return;
+            SceneManager.LoadScene("CombatStatsEditor"); 
         }
-        SceneManager.LoadScene("CombatStatsEditor");
     }
 
  
@@ -176,10 +194,14 @@ public class BattleSystem : MonoBehaviour
         {
             TurnOffEnemy.bossFight++;
             PlayerManager.victoryCounter++;
+            fightMusic.Stop();
+            bossMusic.Stop();
             SceneManager.LoadScene("Victory");
         }
         else if (state == BattleState.LOST)
         {
+            fightMusic.Stop();
+            bossMusic.Stop();
             SceneManager.LoadScene("GameOver");
         }
     }
