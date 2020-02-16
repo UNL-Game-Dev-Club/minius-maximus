@@ -48,8 +48,9 @@ public class DialogueManager : MonoBehaviour
 
     public bool EndDialogue(){
         isTrue = true;
+        dialogueStarted = false;
+
         return true;
-        dialogueStarted=false;
     }
 
     // Update is called once per frame

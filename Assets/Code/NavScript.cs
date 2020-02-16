@@ -19,7 +19,6 @@ public class NavScript : MonoBehaviour
         diaManagerObj= GameObject.Find("DialogueManager");
         diaManag=diaManagerObj.GetComponent(typeof(DialogueManager)) as DialogueManager;
         rb=this.GetComponent<Rigidbody2D>();
-        transform.position=new Vector3(1,1,0);
     }
 
     // Update is called once per frame

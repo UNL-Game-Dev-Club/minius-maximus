@@ -7,20 +7,22 @@ using UnityEngine.UI;
 
 public class DialogueTrig : MonoBehaviour
 {
-    public int health;
-    public int strength;
-    public int defense;
-    public int enemyNumber;
+    [SerializeField] int health;
+    [SerializeField] int strength;
+    [SerializeField] int defense;
+    [SerializeField] int enemyNumber;
     public GameObject button;
     public GameObject sierraMist;
     public SpriteRenderer sierraMistSprite;
 
     DialogueManager dialogueManager;
 
+  
+
     private void Start()
     {
-        button = GameObject.Find("Button");
-        sierraMist = GameObject.Find("Sierra Mist");
+        //button = GameObject.Find("Button");
+        //sierraMist = GameObject.Find("Sierra Mist");
         sierraMistSprite = sierraMist.GetComponent(typeof(SpriteRenderer)) as SpriteRenderer;
         dialogueManager = FindObjectOfType<DialogueManager>();
         Debug.Log(button);
@@ -32,6 +34,7 @@ public class DialogueTrig : MonoBehaviour
     {
         if (dialogueManager.isTrue)
         {
+            dialogueManager.isTrue = false;
             Fight();
         }
     }
@@ -53,14 +56,8 @@ public class DialogueTrig : MonoBehaviour
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        dialogueManager.StartDialogue(dialogue);
         ShowButton();
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-
-    }
-
-
-    public void Fight()
-    {
         EnemyUnit.currentHealth = health;
         EnemyUnit.maxHealth = health;
         EnemyUnit.strength = strength;
@@ -68,8 +65,11 @@ public class DialogueTrig : MonoBehaviour
         EnemyUnit.enemyNumber = enemyNumber;
 
         PlayerUnit.currentHealth = PlayerUnit.maxHealth;
+    }
 
 
+    public void Fight()
+    {
 
         SceneManager.LoadScene("Combat");
     }
