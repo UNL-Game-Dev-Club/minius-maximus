@@ -28,6 +28,8 @@ public class BattleSystem : MonoBehaviour
     PlayerUnit playerUnit;
     EnemyUnit enemyUnit;
 
+    public AudioSource hitSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -98,6 +100,7 @@ public class BattleSystem : MonoBehaviour
         enemyHUD.SetHp(EnemyUnit.currentHealth);
         enemyHUD.SetHUD(enemyUnit);
 
+        hitSound.Play();
         yield return new WaitForSeconds(2f);
 
         if (isDead)
@@ -119,6 +122,7 @@ public class BattleSystem : MonoBehaviour
         playerHUD.SetHp(PlayerUnit.currentHealth);
         playerHUD.SetHUD(playerUnit);
 
+        hitSound.Play();
         yield return new WaitForSeconds(1f);
 
         if (isDead)
