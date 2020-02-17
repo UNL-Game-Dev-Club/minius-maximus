@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class UnitHUD : MonoBehaviour
 {
+    //Variables for combat UI
     public Slider hpSlider;
     public Text playerHpText;
     public Text enemyHpText;
@@ -14,7 +15,7 @@ public class UnitHUD : MonoBehaviour
     public Text defenseText;
     public Text speedText;
     
-
+    //Sets the player stats to the UI
     public void SetHUD(PlayerUnit playerUnit)
     {
         hpSlider.maxValue = PlayerUnit.maxHealth;
@@ -34,6 +35,7 @@ public class UnitHUD : MonoBehaviour
         }
     }
 
+    //Sets the enemies stats to the UI
     public void SetHUD(EnemyUnit enemyUnit)
     {
         hpSlider.maxValue = EnemyUnit.maxHealth;
@@ -54,6 +56,7 @@ public class UnitHUD : MonoBehaviour
     }
     
 
+    //Updates the hp slider
     public void SetHp(int hp)
     {
         hpSlider.value = hp;

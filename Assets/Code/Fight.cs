@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Fight : MonoBehaviour
 {
+    //Not used anymore should probably delete
     public int health;
     public int strength;
     public int defense;

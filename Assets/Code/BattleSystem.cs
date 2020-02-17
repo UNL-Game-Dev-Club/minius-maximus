@@ -5,11 +5,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public enum BattleState { START, PLAYERTURN, WON, LOST }
+//Different states the in combat
+public enum BattleState { START, FIGHT, WON, LOST }
 
 public class BattleSystem : MonoBehaviour
 {
+    //Reference of enum
     BattleState state;
+
     //Config variables
     public GameObject playerPrefab;
     public GameObject enemyPrefab;
@@ -35,7 +38,7 @@ public class BattleSystem : MonoBehaviour
     public static bool playingMusic = false;
 
 
-    // Start is called before the first frame update
+    // Sets state to start, plays fighting music, and calls SetUpBattle()
     void Start()
     {
         state = BattleState.START;
@@ -57,12 +60,11 @@ public class BattleSystem : MonoBehaviour
             playingMusic = true;
         }
 
-        //Calls the SetUpBattle function
         StartCoroutine(SetUpBattle());
     }
 
   
-
+    //Coroutine used to setup the combat scene
     IEnumerator SetUpBattle()
     {
 
@@ -82,7 +84,7 @@ public class BattleSystem : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         //Switchs the turns to playerturn
        
-        state = BattleState.PLAYERTURN;
+        state = BattleState.FIGHT;
         PlayerTurn();
  
     }
@@ -97,7 +99,7 @@ public class BattleSystem : MonoBehaviour
     //function that runs on attack button press
     public void OnAttackButton()
     {
-        if (state == BattleState.PLAYERTURN)
+        if (state == BattleState.FIGHT)
         {
             StartCoroutine(Battle());
         }
@@ -105,22 +107,23 @@ public class BattleSystem : MonoBehaviour
 
     public void OnStatsButton()
     {
-        if (state == BattleState.PLAYERTURN)
+        if (state == BattleState.FIGHT)
         {
             SceneManager.LoadScene("CombatStatsEditor"); 
         }
     }
 
- 
+    
     IEnumerator Battle()
     {
+        //These if else statements bascially decide who attacks first while also making sure the othe entity gets to deal damage
         if (PlayerUnit.speed > EnemyUnit.speed || PlayerUnit.speed == EnemyUnit.speed)
         {
             //Turns buttons off so player cannot attack twice
             DisableButton();
             //Calls the Take Damage function in the Unit.cs script and assings it to bool isDead to check if enemy dies
             bool isDead = enemyUnit.TakeDamage(PlayerUnit.strength, EnemyUnit.defense);
-
+            //Updates the UI display
             enemyHUD.SetHp(EnemyUnit.currentHealth);
             enemyHUD.SetHUD(enemyUnit);
 
@@ -147,7 +150,7 @@ public class BattleSystem : MonoBehaviour
                 }
                 else
                 {
-                    state = BattleState.PLAYERTURN;
+                    state = BattleState.FIGHT;
                     PlayerTurn();
                 }
             }
@@ -182,7 +185,7 @@ public class BattleSystem : MonoBehaviour
                 }
                 else
                 {
-                    state = BattleState.PLAYERTURN;
+                    state = BattleState.FIGHT;
                     PlayerTurn();
                 }
             }

@@ -7,24 +7,25 @@ using UnityEngine.UI;
 
 public class DialogueTrig : MonoBehaviour
 {
+    //Enemy set stats variables
     [SerializeField] int health;
     [SerializeField] int strength;
     [SerializeField] int defense;
     [SerializeField] int speed;
     [SerializeField] int enemyNumber;
 
+    //UI for dialogue
     public GameObject button;
     public GameObject sierraMist;
     public SpriteRenderer sierraMistSprite;
 
+    //Reference to dialoguemanager
     DialogueManager dialogueManager;
 
   
-
+    
     private void Start()
     {
-        //button = GameObject.Find("Button");
-        //sierraMist = GameObject.Find("Sierra Mist");
         sierraMistSprite = sierraMist.GetComponent(typeof(SpriteRenderer)) as SpriteRenderer;
         dialogueManager = FindObjectOfType<DialogueManager>();
         Debug.Log(button);
@@ -32,6 +33,7 @@ public class DialogueTrig : MonoBehaviour
       
     }
 
+    //Checks if conversation is done and loads combat scene and sets back to false if true
     private void Update()
     {
         if (dialogueManager.isTrue)
@@ -56,6 +58,12 @@ public class DialogueTrig : MonoBehaviour
 
     public Dialogue dialogue;
     // Start is called before the first frame update
+
+    /*When the player collides with the enemies trigger collider
+    the dialogue in DialogueManager.cs is started
+    enemies static stats are set to the enemy stats vars at the top
+    the players maxhealth adjusted
+    the players stats before the combat begins is stored in the statBefore vars*/
     private void OnTriggerEnter2D(Collider2D collision)
     {
         dialogueManager.StartDialogue(dialogue);
@@ -75,7 +83,7 @@ public class DialogueTrig : MonoBehaviour
         PlayerUnit.speedBefore = PlayerUnit.speed;
     }
 
-
+    //Called when dialogue is finshed
     public void Fight()
     {
 

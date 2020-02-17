@@ -6,15 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class StatsSystem : MonoBehaviour
 {
-    public static int counter = 0;
-
+    //Text numbers for each player stat
     public Text healthStatsText;
     public Text strengthStatsText;
     public Text defenseStatsText;
     public Text speedStatsText;
     public Text statPointsText;
     
-
+    //Set stats variablies
     public int statPoints = 0;
     public int healthStat;
     public int strengthStat;
@@ -31,6 +30,7 @@ public class StatsSystem : MonoBehaviour
         SetStats();
     }
 
+    //Sets the non-static stat variables to the players stats and updates the text
     public void SetStats()
     {
         healthStat = PlayerUnit.currentHealth;
@@ -45,11 +45,13 @@ public class StatsSystem : MonoBehaviour
         statPointsText.text = statPoints.ToString();
     }
 
+   
     public void OnBackButton()
     {
         SceneManager.LoadScene("Combat");
     }
 
+    //Sets the changes made to the non-static variables to the player's stats and loads combat scene back up
     public void OnApplyButton()
     {
         if (statPoints == 0)
@@ -64,13 +66,13 @@ public class StatsSystem : MonoBehaviour
                 PlayerUnit.maxHealth = PlayerUnit.currentHealth;
             }
 
-            //counter++;
-
             SceneManager.LoadScene("Combat");
         }
     }
 
-
+    //Methods for the + and - buttons for each stat
+    //+ Adds the stat and minus the stat points var and updates the texts to display the number
+    //- Subtracts the stat and adds one to stat points var and updates the texts involved. 
     public void AddHealth()
     {
         if(statPoints > 0)
