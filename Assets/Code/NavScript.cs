@@ -85,5 +85,10 @@ public class NavScript : MonoBehaviour
         }
     }
 
-    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        animator.SetBool("isRunning", false);
+    }
+
+
 }

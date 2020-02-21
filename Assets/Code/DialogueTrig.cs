@@ -30,7 +30,7 @@ public class DialogueTrig : MonoBehaviour
         dialogueManager = FindObjectOfType<DialogueManager>();
         Debug.Log(button);
         HideButton();
-      
+
     }
 
     //Checks if conversation is done and loads combat scene and sets back to false if true
