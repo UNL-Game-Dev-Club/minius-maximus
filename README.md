@@ -24,5 +24,3 @@ Fight your way through Gladiator High and defeat Principal Treebread!
 - Anders Long: UI Development, Icon and Title Art
 - Kelly Kamrath: Character and Background Art
 - Aaron Friesen: Music and Sound Design
-
-[Download the soundtrack for free!](https://frie.dev/minius-maximus-ost)
